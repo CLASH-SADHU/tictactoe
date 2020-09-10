@@ -24,57 +24,55 @@ while(turn <= 9):
     if player == 1:
         if currentBoard[moveColumn][moveRow] == " ":
             currentBoard[moveColumn][moveRow] = "X"
-            player = 2       
+            player = 2
+            lastPlayer = 1
         elif currentBoard[moveColumn][moveRow] !=" ":
-            turn -= 1                   
+            turn -= 1                          
     else:
         if currentBoard[moveColumn][moveRow] == " ":
             currentBoard[moveColumn][moveRow] = "O"
             player = 1
+            lastPlayer = 2
         elif currentBoard[moveColumn][moveRow] != " " :
-            turn -= 1   
-    turn+=1
-    # print(turn)
-    # print(player)
-    
+            turn -= 1          
+    turn+=1 
     if turn >= 5 :
-        if (currentBoard[0][0] == currentBoard[1][0] == currentBoard[2][0] != " "):
+        if (currentBoard[0][0] == currentBoard[1][0] == currentBoard[2][0] != " "): 
             drawField(currentBoard)
-            print("Player",player,"won")  
+            print("Player",lastPlayer,"won")  
             break
         if (currentBoard[0][1] == currentBoard[1][1] == currentBoard[2][1] != " "):
             drawField(currentBoard)
-            print("Player",player,"won")     
+            print("Player",lastPlayer,"won")     
             break
         if (currentBoard[0][2] == currentBoard[1][2] == currentBoard[2][2] != " " ):
             drawField(currentBoard)
-            print("Player",player,"won")     
+            print("Player",lastPlayer,"won")     
             break
         if (currentBoard[0][2] == currentBoard[1][1] == currentBoard[2][0] != " " ):
             drawField(currentBoard)
-            print("Player",player,"won")     
+            print("Player",lastPlayer,"won")     
             break
         if (currentBoard[0][0] == currentBoard[1][1] == currentBoard[2][2] != " " ):
             drawField(currentBoard)
-            print("Player",player,"won")     
+            print("Player",lastPlayer,"won")     
             break
         if (currentBoard[0][0] == currentBoard[0][1] == currentBoard[0][2] != " " ):
             drawField(currentBoard)
-            print("Player",player,"won")     
+            print("Player",lastPlayer,"won")     
             break
         if (currentBoard[1][0] == currentBoard[1][1] == currentBoard[1][2] != " " ):
             drawField(currentBoard)
-            print("Player",player,"won")     
+            print("Player",lastPlayer,"won")     
             break
         if (currentBoard[2][0] == currentBoard[2][1] == currentBoard[2][2] != " " ):
             drawField(currentBoard)
-            print("Player",player,"won")     
+            print("Player",lastPlayer,"won")     
             break
         else:
             if turn == 9:
                 drawField(currentBoard)
                 print("NO WIN")
-                break
-            
+                break        
     drawField(currentBoard)
   
